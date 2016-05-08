@@ -12,7 +12,7 @@ import android.widget.Toast;
  */
 public class SignupActivity extends Activity {
 
-    EditText fullName, emailId, password, department, contactNo;
+    EditText fullName, emailId, password, confPassword, department, contactNo;
     Button signup;
 
     @Override
@@ -23,6 +23,7 @@ public class SignupActivity extends Activity {
         fullName = (EditText) findViewById(R.id.etFullName);
         emailId = (EditText) findViewById(R.id.etEmail);
         password = (EditText) findViewById(R.id.etPassword);
+        confPassword = (EditText) findViewById(R.id.etConfPassword);
         department = (EditText) findViewById(R.id.etDepartment);
         contactNo = (EditText) findViewById(R.id.etContact);
 
@@ -31,8 +32,10 @@ public class SignupActivity extends Activity {
         final String fullNameText = fullName.getText().toString().trim();
         final String emailText = emailId.getText().toString().trim();
         final String passwdText = password.getText().toString().trim();
+        final String confPasswd = confPassword.getText().toString().trim();
         final String deptText = department.getText().toString().trim();
         final String contactText = contactNo.getText().toString().trim();
+
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +43,11 @@ public class SignupActivity extends Activity {
                 if(fullNameText.isEmpty() || emailText.isEmpty() || passwdText.isEmpty() ||
                         deptText.isEmpty() || contactText.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Please fill up all the credentials", Toast.LENGTH_SHORT).show();
+                }
+                else if(!passwdText.equals(confPasswd)){
+                    password.getText().equals("");
+                    confPassword.getText().equals("");
+                    Toast.makeText(getApplicationContext(), "Passwords do not match. Try again",Toast.LENGTH_LONG).show();
                 }
             }
         });
