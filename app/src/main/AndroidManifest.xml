@@ -38,6 +38,8 @@
             android:name=".Stem"
             android:label="@string/title_activity_stem"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".SignupActivity" />
+
     </application>
 
 </manifest>
