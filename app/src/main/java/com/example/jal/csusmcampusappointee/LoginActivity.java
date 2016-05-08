@@ -15,6 +15,7 @@ public class LoginActivity extends Activity {
 
     AutoCompleteTextView email;
     EditText password;
+    Button signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class LoginActivity extends Activity {
         email = (AutoCompleteTextView) findViewById(R.id.email);
         password = (EditText) findViewById(R.id.password);
         Button sendbutton = (Button) findViewById(R.id.email_sign_in_button);
+        signup = (Button) findViewById(R.id.signUpButton);
 
         sendbutton.setOnClickListener(
                 new View.OnClickListener() {
@@ -50,9 +52,17 @@ public class LoginActivity extends Activity {
                         }
                     }
                 });
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 
-    ;
+
 
 
 }
