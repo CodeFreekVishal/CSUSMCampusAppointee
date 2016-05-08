@@ -27,7 +27,7 @@ public class SignupActivity extends Activity {
         department = (EditText) findViewById(R.id.etDepartment);
         contactNo = (EditText) findViewById(R.id.etContact);
 
-        signup = (Button) findViewById(R.id.signUpButton);
+        signup = (Button) findViewById(R.id.signupdetails);
 
         final String fullNameText = fullName.getText().toString().trim();
         final String emailText = emailId.getText().toString().trim();
