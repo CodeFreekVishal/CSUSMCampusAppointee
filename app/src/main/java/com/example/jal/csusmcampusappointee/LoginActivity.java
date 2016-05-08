@@ -39,14 +39,11 @@ public class LoginActivity extends Activity {
                         if (emailText.isEmpty() || pwdText.isEmpty()) {
                             Toast.makeText(getApplicationContext(), "Please enter proper login credentials", Toast.LENGTH_LONG).show();
 
-                        }
-                        else if(!emailText.matches(emailPattern)){
+                        } else if (!emailText.matches(emailPattern)) {
                             Toast.makeText(getApplicationContext(), "Please enter a valid email address", Toast.LENGTH_LONG).show();
-                        }
-                        else if(pwdText.length()<6){
+                        } else if (pwdText.length() < 6) {
                             Toast.makeText(getApplicationContext(), "Please enter minimum 6 characters as your password", Toast.LENGTH_LONG).show();
-                        }
-                        else {
+                        } else {
                             Intent intent = new Intent(getApplicationContext(), Homepage.class);
                             startActivity(intent);
                         }
@@ -56,13 +53,12 @@ public class LoginActivity extends Activity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                startActivity(intent);
             }
         });
 
     }
-
-
 
 
 }
