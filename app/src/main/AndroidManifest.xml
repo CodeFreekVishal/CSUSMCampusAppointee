@@ -3,6 +3,8 @@
     package="com.example.jal.csusmcampusappointee">
 
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" android:protectionLevel="signature" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -41,6 +43,9 @@
             android:label="@string/title_activity_stem"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".SignupActivity" />
+        <activity android:name=".AppointmentBooking"></activity>
+        <activity android:name=".DatePickerClass"></activity>
+        <activity android:name=".TimePicker"></activity>
 
     </application>
 

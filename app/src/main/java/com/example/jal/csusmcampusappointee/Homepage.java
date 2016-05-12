@@ -3,15 +3,9 @@ package com.example.jal.csusmcampusappointee;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
-import java.util.List;
 
 public class Homepage extends Activity {
 
@@ -47,8 +41,7 @@ public class Homepage extends Activity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 if (position == 0) {
-                    Intent intent = new Intent(Homepage.this,
-                            Wc.class);
+                    Intent intent = new Intent(Homepage.this, AppointmentBooking.class);
                     startActivity(intent);
                 }
 
