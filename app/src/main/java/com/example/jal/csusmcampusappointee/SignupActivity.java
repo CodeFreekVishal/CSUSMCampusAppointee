@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 /**
  * Created by Vishal on 08-05-2016.
  */
@@ -14,6 +15,9 @@ public class SignupActivity extends Activity {
 
     EditText fullName, emailId, password, confPassword, department, contactNo;
     Button signup;
+
+    SignupDatabaseAdapter sda = new SignupDatabaseAdapter(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,7 @@ public class SignupActivity extends Activity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(fullNameText.isEmpty() || emailText.isEmpty() || passwdText.isEmpty() ||
+            /*    if(fullNameText.isEmpty() || emailText.isEmpty() || passwdText.isEmpty() ||
                         deptText.isEmpty() || contactText.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Please fill up all the credentials", Toast.LENGTH_SHORT).show();
                 }
@@ -49,6 +53,11 @@ public class SignupActivity extends Activity {
                     confPassword.getText().equals("");
                     Toast.makeText(getApplicationContext(), "Passwords do not match. Try again",Toast.LENGTH_LONG).show();
                 }
+                else{  */
+                    sda.open();
+                    sda.insertRecords(fullNameText, emailText, passwdText, deptText, contactText);
+                    Toast.makeText(getApplicationContext(), "Record has been inserted ...", Toast.LENGTH_LONG).show();
+              //  }
             }
         });
 

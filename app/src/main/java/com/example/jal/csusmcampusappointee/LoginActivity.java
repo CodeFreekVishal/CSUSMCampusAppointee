@@ -27,6 +27,8 @@ public class LoginActivity extends Activity {
         Button sendbutton = (Button) findViewById(R.id.email_sign_in_button);
         signup = (Button) findViewById(R.id.signUpButton);
 
+        final SignupDatabaseAdapter sda = new SignupDatabaseAdapter(this);
+
         sendbutton.setOnClickListener(
                 new View.OnClickListener() {
                     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -44,8 +46,15 @@ public class LoginActivity extends Activity {
                         } else if (pwdText.length() < 6) {
                             Toast.makeText(getApplicationContext(), "Please enter minimum 6 characters as your password", Toast.LENGTH_LONG).show();
                         } else {
-                            Intent intent = new Intent(getApplicationContext(), Homepage.class);
-                            startActivity(intent);
+                            sda.open();
+                            if (sda.login(emailText,pwdText)) {
+                                Intent intent = new Intent(getApplicationContext(), Homepage.class);
+                                startActivity(intent);
+                            }
+                            else{
+                                Toast.makeText(getApplicationContext(), "Record not found !", Toast.LENGTH_LONG).show();
+                            }
+
                         }
                     }
                 });

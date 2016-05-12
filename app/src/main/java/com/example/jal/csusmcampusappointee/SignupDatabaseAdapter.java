@@ -1,9 +1,10 @@
-package com.example.jal.database;
+package com.example.jal.csusmcampusappointee;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
@@ -24,7 +25,7 @@ public class SignupDatabaseAdapter extends SQLiteOpenHelper {
     public static final String col_deparment = "department";
     public static final String col_contact = "contact";
 
-
+    SQLiteDatabase db;
 
     public SignupDatabaseAdapter(Context context){
         super(context, database_name, null, 1);
@@ -32,7 +33,7 @@ public class SignupDatabaseAdapter extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table details" + "(id integer primary key auto_increment, fullname text, emailid text, password text, department text, contact text)");
+        db.execSQL("create table details" + "(id integer auto_increment primary key, fullname text, emailid text, password text, department text, contact text)");
     }
 
     @Override
@@ -43,7 +44,7 @@ public class SignupDatabaseAdapter extends SQLiteOpenHelper {
     }
 
     public boolean insertRecords(String fullname, String emailid, String password, String department, String contact){
-        SQLiteDatabase db = getWritableDatabase();
+         db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
         contentValues.put(col_fullname, fullname);
@@ -58,7 +59,7 @@ public class SignupDatabaseAdapter extends SQLiteOpenHelper {
 
 
     public boolean updateRecords(Integer id, String fullname, String emailid, String password, String department, String contact){
-        SQLiteDatabase db = getWritableDatabase();
+         db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
         contentValues.put(col_fullname, fullname);
@@ -72,25 +73,62 @@ public class SignupDatabaseAdapter extends SQLiteOpenHelper {
     }
 
     public Cursor getRecord(int id) {
-        SQLiteDatabase db = this.getReadableDatabase();
+         db = this.getReadableDatabase();
         Cursor res = db.rawQuery( "SELECT * FROM " + table_name + " WHERE " +
                 col_id + "=?", new String[] { Integer.toString(id) } );
         return res;
     }
 
     public Cursor getAllRecords() {
-        SQLiteDatabase db = this.getReadableDatabase();
+         db = this.getReadableDatabase();
         Cursor res = db.rawQuery( "SELECT * FROM " + table_name, null );
         return res;
     }
 
 
     public Integer deleteRecord(Integer id) {
-        SQLiteDatabase db = this.getWritableDatabase();
+         db = this.getWritableDatabase();
         return db.delete(table_name,
                 col_id + " = ? ",
                 new String[] { Integer.toString(id) });
     }
 
+    public boolean getSingleEmailEntry(String emailid){
+        Cursor cursor = db.query(table_name, null, "emailid=?", new String[]{emailid}, null, null, null);
+        if(cursor.getCount()!=1){
+            cursor.close();
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    public boolean getSinglePwdEntry(String password){
+        Cursor cursor = db.query(table_name, null, "password=?", new String[]{password}, null, null, null);
+        if(cursor.getCount()!=1){
+            cursor.close();
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    public boolean login(String emailid, String password){
+        Cursor cursor = db.rawQuery("SELECT * FROM details WHERE emailid=? AND password=?",new String[]{emailid, password});
+        if(cursor.getCount()==1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+    public SignupDatabaseAdapter open() throws SQLiteException{
+        db = this.getWritableDatabase();
+        return this;
+    }
 
 }
