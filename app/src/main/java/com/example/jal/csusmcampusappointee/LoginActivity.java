@@ -52,6 +52,8 @@ public class LoginActivity extends Activity {
                                 startActivity(intent);
                             }
                             else{
+                                Intent intent = new Intent(getApplicationContext(), Homepage.class);
+                                startActivity(intent);
                                 Toast.makeText(getApplicationContext(), "Record not found !", Toast.LENGTH_LONG).show();
                             }
 
