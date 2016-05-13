@@ -34,6 +34,7 @@ public class TimePick extends Activity {
             public void onClick(View v) {
                 Bundle bundle = getIntent().getExtras();
                 String name = bundle.getString("name");
+                String subject = bundle.getString("subject");
                 int day = bundle.getInt("day");
                 int month  = bundle.getInt("month");
                 int year = bundle.getInt("year");
@@ -44,16 +45,14 @@ public class TimePick extends Activity {
 
                 Toast.makeText(TimePick.this, currenthour+""+currentmin, Toast.LENGTH_SHORT).show();
 
-               // Toast.makeText(getApplicationContext(), name+""+day+""+month+""+year, Toast.LENGTH_LONG).show();
-
-
-                /*
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("message/rfc822");
                 i.putExtra(Intent.EXTRA_EMAIL, new String[]{"astrovishy@gmail.com"});
-                i.putExtra(Intent.EXTRA_SUBJECT, "subject of email");
-                i.putExtra(Intent.EXTRA_TEXT, "body of email");
-                //     i.putExtra(Intent.EXTRA_TEXT, dpc.getAppointmentName().getText().toString().trim());
+                i.putExtra(Intent.EXTRA_SUBJECT, subject);
+                i.putExtra(Intent.EXTRA_TEXT, "Respected Professor, \n \n \t San Marcos student "+name+ " would like to book an appointment with you on "+
+                    month+"/"+day+"/"+"/"+year+" at "+currenthour+":"+currentmin+
+                        "\n \n Thanks for your time."
+                );
 
                 try {
                     startActivity(Intent.createChooser(i, "Send mail..."));
@@ -61,26 +60,10 @@ public class TimePick extends Activity {
                     Toast.makeText(getApplicationContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
                 }
 
-                */
-
-                //sendEmail();
             }
         });
 
     }
 
-    public void sendEmail(){
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("message/rfc822");
-        i.putExtra(Intent.EXTRA_EMAIL, new String[]{"astrovishy@gmail.com"});
-        i.putExtra(Intent.EXTRA_SUBJECT, "subject of email");
-        i.putExtra(Intent.EXTRA_TEXT, "body of email");
-   //     i.putExtra(Intent.EXTRA_TEXT, dpc.getAppointmentName().getText().toString().trim());
 
-        try {
-            startActivity(Intent.createChooser(i, "Send mail..."));
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(getApplicationContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-        }
-    }
 }
