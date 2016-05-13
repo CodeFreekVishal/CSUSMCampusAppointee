@@ -2436,7 +2436,7 @@ containing a value of this type.
         public static final int textView=0x7f0c0084;
         public static final int textView1=0x7f0c0099;
         public static final int time=0x7f0c00ac;
-        public static final int timePicker=0x7f0c00b4;
+        public static final int timer=0x7f0c00b4;
         public static final int title=0x7f0c0043;
         public static final int title_template=0x7f0c0048;
         public static final int toolbar=0x7f0c0069;

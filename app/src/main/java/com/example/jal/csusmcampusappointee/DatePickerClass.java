@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 /**
  * Created by Vishal on 13-05-2016.
@@ -33,8 +34,19 @@ public class DatePickerClass extends Activity {
             @Override
             public void onClick(View v) {
                 String appNameText = appointmentName.getText().toString().trim();
+                int day = datePicker.getDayOfMonth();
+                int month = (datePicker.getMonth()+1);
+                int year = datePicker.getYear();
 
-                Intent intent = new Intent(getApplicationContext(), TimePicker.class);
+                Toast.makeText(DatePickerClass.this, appNameText+""+""+day+""+(datePicker.getMonth()+1)+""+year, Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getApplicationContext(), TimePick.class);
+
+                intent.putExtra("name", appNameText);
+                intent.putExtra("day", day);
+                intent.putExtra("month", (datePicker.getMonth()+1));
+                intent.putExtra("year", year);
+
                 startActivity(intent);
             }
         });

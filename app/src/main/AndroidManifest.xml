@@ -45,7 +45,7 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".AppointmentBooking"></activity>
         <activity android:name=".DatePickerClass"></activity>
-        <activity android:name=".TimePicker"></activity>
+        <activity android:name=".TimePick"></activity>
 
     </application>
 
