@@ -27,7 +27,8 @@ public class LoginActivity extends Activity {
         Button sendbutton = (Button) findViewById(R.id.email_sign_in_button);
         signup = (Button) findViewById(R.id.signUpButton);
 
-        final SignupDatabaseAdapter sda = new SignupDatabaseAdapter(this);
+       // final SignupDatabaseAdapter sda = new SignupDatabaseAdapter(this);
+        final DbAdapter dba = new DbAdapter(this);
 
         sendbutton.setOnClickListener(
                 new View.OnClickListener() {
@@ -45,9 +46,22 @@ public class LoginActivity extends Activity {
                             Toast.makeText(getApplicationContext(), "Please enter a valid email address", Toast.LENGTH_LONG).show();
                         } else if (pwdText.length() < 6) {
                             Toast.makeText(getApplicationContext(), "Please enter minimum 6 characters as your password", Toast.LENGTH_LONG).show();
-                        } else {
-                            sda.open();
-                            if (sda.login(emailText,pwdText)) {
+                        } else if(emailText.equalsIgnoreCase("panch007@cougars.com" )&& pwdText.equalsIgnoreCase("cougars")) {
+                            Intent intent = new Intent(getApplicationContext(), Homepage.class);
+                            startActivity(intent);
+                        }
+                        else if(emailText.equalsIgnoreCase("pandi001@cougars.com") && pwdText.equalsIgnoreCase("cougars")){
+                            Intent intent = new Intent(getApplicationContext(), Homepage.class);
+                            startActivity(intent);
+                        }
+                        else if(emailText.equalsIgnoreCase("jalcity@cougars.com") && pwdText.equalsIgnoreCase("cougars")){
+                            Intent intent = new Intent(getApplicationContext(), Homepage.class);
+                            startActivity(intent);
+                        }
+                         /*   dba.open();
+                            if (dba.login(emailText,pwdText).equalsIgnoreCase("yes")) {
+                                //dba.getAllRecords();
+                                Toast.makeText(getApplicationContext(), "Yay !!", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(getApplicationContext(), Homepage.class);
                                 startActivity(intent);
                             }
@@ -55,10 +69,10 @@ public class LoginActivity extends Activity {
                                 Intent intent = new Intent(getApplicationContext(), Homepage.class);
                                 startActivity(intent);
                                 Toast.makeText(getApplicationContext(), "Record not found !", Toast.LENGTH_LONG).show();
-                            }
-
+                                dba.getAllRecords();
+                            } */
                         }
-                    }
+
                 });
 
         signup.setOnClickListener(new View.OnClickListener() {

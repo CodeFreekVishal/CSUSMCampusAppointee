@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RatingBar;
 
 public class Homepage extends Activity {
 
@@ -23,9 +24,10 @@ public class Homepage extends Activity {
             R.drawable.lang3,
             R.drawable.stem
 
-
-
     };
+
+    RatingBar rb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,21 +48,17 @@ public class Homepage extends Activity {
                 }
 
                 if (position == 1) {
-                    Intent intent = new Intent(Homepage.this,
-                            Math.class);
+                    Intent intent = new Intent(Homepage.this, AppointmentBooking.class);
                     startActivity(intent);
                 }
                 if (position == 2) {
-                    Intent intent = new Intent(Homepage.this,
-                            Lang.class);
+                    Intent intent = new Intent(Homepage.this, AppointmentBooking.class);
                     startActivity(intent);
                 }
                 if (position == 3) {
-                    Intent intent = new Intent(Homepage.this,
-                            Stem.class);
+                    Intent intent = new Intent(Homepage.this, AppointmentBooking.class);
                     startActivity(intent);
                 }
-
 
 
     }

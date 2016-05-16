@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:scrollbars="vertical|horizontal"
+    android:fillViewport="true"
+    >
+
+<LinearLayout
+    android:background="#545454"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="30dip"
-    android:scrollbars="vertical">
+    android:paddingTop="20dip"
+    android:paddingBottom="20dip"
+    android:weightSum="0.99"
+    >
 
     <LinearLayout
+        android:layout_weight="0.33"
         android:layout_width="match_parent"
-        android:layout_height="100dip"
+        android:layout_height="120dip"
         android:orientation="horizontal"
         android:paddingBottom="10dip"
         android:paddingLeft="10dip"
-        android:weightSum="1">
+        android:weightSum="0.9">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dip"
+            android:layout_height="wrap_content"
             android:layout_weight="0.4"
             android:gravity="center"
             android:orientation="vertical">
 
+
             <TextView
+                android:textColor="#FFFFFF"
+                android:layout_weight="0.1"
                 android:id="@+id/tvProfName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,44 +45,56 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
+                android:textColor="#FFFFFF"
+                android:layout_weight="0.1"
                 android:id="@+id/tvDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dept of Xyz"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
-            <Button
-                android:id="@+id/btnProf1"
+            <RatingBar
+                android:layout_weight="0.1"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:background="#FF33B5E5"
+                android:textColor="#ffffffff"
+                android:id="@+id/btnProf1"
+                android:layout_width="160dip"
                 android:layout_height="wrap_content"
                 android:text="Book Appointment" />
 
         </LinearLayout>
 
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.6"
+            android:layout_weight="0.5"
             android:src="@drawable/professor" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="0.33"
         android:layout_width="match_parent"
-        android:layout_height="100dip"
+        android:layout_height="120dip"
         android:orientation="horizontal"
         android:paddingBottom="10dip"
         android:paddingLeft="10dip"
-        android:weightSum="1">
+        android:weightSum="0.9">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dip"
+            android:layout_height="wrap_content"
             android:layout_weight="0.4"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
+                android:textColor="#FFFFFF"
                 android:id="@+id/tvProfName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,15 +102,23 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
+                android:textColor="#FFFFFF"
                 android:id="@+id/tvDetails2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dept of Xyz"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
-            <Button
-                android:id="@+id/btnProf2"
+            <RatingBar
+                android:layout_weight="0.1"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:background="#FF33B5E5"
+                android:textColor="#ffffffff"
+                android:id="@+id/btnProf2"
+                android:layout_width="160dip"
                 android:layout_height="wrap_content"
                 android:text="Book Appointment" />
 
@@ -92,27 +127,30 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.6"
+            android:layout_weight="0.5"
             android:src="@drawable/professor" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="0.33"
         android:layout_width="match_parent"
-        android:layout_height="100dip"
+        android:layout_height="120dip"
         android:orientation="horizontal"
         android:paddingBottom="10dip"
         android:paddingLeft="10dip"
-        android:weightSum="1">
+        android:weightSum="0.9">
 
         <LinearLayout
+
             android:layout_width="match_parent"
-            android:layout_height="100dip"
+            android:layout_height="wrap_content"
             android:layout_weight="0.4"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
+                android:textColor="#FFFFFF"
                 android:id="@+id/tvProfName3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,15 +158,23 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
+                android:textColor="#FFFFFF"
                 android:id="@+id/tvDetails3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dept of Xyz"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
+            <RatingBar
+                android:layout_weight="0.1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
             <Button
+                android:background="#FF33B5E5"
+                android:textColor="#ffffffff"
                 android:id="@+id/btnProf3"
-                android:layout_width="wrap_content"
+                android:layout_width="160dip"
                 android:layout_height="wrap_content"
                 android:text="Book Appointment" />
 
@@ -137,54 +183,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.6"
+            android:layout_weight="0.5"
             android:src="@drawable/professor" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dip"
-        android:orientation="horizontal"
-        android:paddingBottom="10dip"
-        android:paddingLeft="10dip"
-        android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dip"
-            android:layout_weight="0.4"
-            android:gravity="center"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvProfName4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Professor 4"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:id="@+id/tvDetails4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dept of Xyz"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <Button
-                android:id="@+id/btnProf4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Book Appointment" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.6"
-            android:src="@drawable/professor" />
-
-    </LinearLayout>
 
 </LinearLayout>
+
+</ScrollView>

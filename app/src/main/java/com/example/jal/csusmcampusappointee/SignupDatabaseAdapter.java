@@ -33,13 +33,13 @@ public class SignupDatabaseAdapter extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table details" + "(id integer auto_increment primary key, fullname text, emailid text, password text, department text, contact text)");
+        db.execSQL("create table details (id integer auto_increment primary key, fullname text, emailid text, password text, department text, contact text)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.w("TaskDbAdapter", "Upgrading database from" + oldVersion +  "to" + newVersion + ",which will destroy all data...");
-        db.execSQL("DROP TABLE IF EXISTS"+table_name);
+        db.execSQL("DROP TABLE IF EXISTS "+table_name);
         onCreate(db);
     }
 
@@ -53,7 +53,7 @@ public class SignupDatabaseAdapter extends SQLiteOpenHelper {
         contentValues.put(col_deparment, department);
         contentValues.put(col_contact, contact);
 
-        db.insert(table_name, null,  contentValues);
+        db.insert("details", null,  contentValues);
         return true;
     }
 
@@ -82,6 +82,7 @@ public class SignupDatabaseAdapter extends SQLiteOpenHelper {
     public Cursor getAllRecords() {
          db = this.getReadableDatabase();
         Cursor res = db.rawQuery( "SELECT * FROM " + table_name, null );
+        //Toast.makeText(, String.valueOf(res), Toast.LENGTH_LONG).show();
         return res;
     }
 
@@ -116,7 +117,7 @@ public class SignupDatabaseAdapter extends SQLiteOpenHelper {
     }
 
     public boolean login(String emailid, String password){
-        Cursor cursor = db.rawQuery("SELECT * FROM details WHERE emailid=? AND password=?",new String[]{emailid, password});
+        Cursor cursor = db.rawQuery("SELECT * FROM " +table_name+ " WHERE emailid=? AND password=?",new String[]{emailid, password});
         if(cursor.getCount()==1){
             return true;
         }
@@ -128,6 +129,7 @@ public class SignupDatabaseAdapter extends SQLiteOpenHelper {
 
     public SignupDatabaseAdapter open() throws SQLiteException{
         db = this.getWritableDatabase();
+
         return this;
     }
 

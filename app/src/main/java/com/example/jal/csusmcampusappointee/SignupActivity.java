@@ -16,8 +16,8 @@ public class SignupActivity extends Activity {
     EditText fullName, emailId, password, confPassword, department, contactNo;
     Button signup;
 
-    SignupDatabaseAdapter sda = new SignupDatabaseAdapter(this);
-
+    //SignupDatabaseAdapter sda = new SignupDatabaseAdapter(this);
+    DbAdapter dba = new DbAdapter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +54,8 @@ public class SignupActivity extends Activity {
                     Toast.makeText(getApplicationContext(), "Passwords do not match. Try again",Toast.LENGTH_LONG).show();
                 }
                 else{  */
-                    sda.open();
-                    sda.insertRecords(fullNameText, emailText, passwdText, deptText, contactText);
+                    dba.open();
+                    dba.insertRecords(fullNameText, emailText, passwdText, deptText, contactText);
                     Toast.makeText(getApplicationContext(), "Record has been inserted ...", Toast.LENGTH_LONG).show();
               //  }
             }

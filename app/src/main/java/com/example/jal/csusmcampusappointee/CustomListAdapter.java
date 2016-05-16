@@ -10,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 public class CustomListAdapter extends  ArrayAdapter<String> {
 
     private final Activity context;
     private final String[] itemname;
     private final Integer[] imgid;
+    private RatingBar rb;
 
     public CustomListAdapter(Activity context, String[] itemname, Integer[] imgid) {
         super(context, R.layout.mylist, itemname);
@@ -24,6 +26,7 @@ public class CustomListAdapter extends  ArrayAdapter<String> {
         this.context=context;
         this.itemname=itemname;
         this.imgid=imgid;
+       // this.rb = rb;
     }
 
     public View getView(int position,View view,ViewGroup parent) {
@@ -33,10 +36,12 @@ public class CustomListAdapter extends  ArrayAdapter<String> {
         TextView txtTitle = (TextView) rowView.findViewById(R.id.item);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
         TextView extratxt = (TextView) rowView.findViewById(R.id.textView1);
+        //RatingBar ratingBar = (RatingBar) rowView.findViewById(R.id.courserating);
 
         txtTitle.setText(itemname[position]);
         imageView.setImageResource(imgid[position]);
         extratxt.setText("Description "+itemname[position]);
+        //ratingBar.setRating(4.2f);
         return rowView;
 
     };

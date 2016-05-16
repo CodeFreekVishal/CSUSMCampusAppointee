@@ -1,36 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:paddingTop="20dip"
-    android:weightSum="1"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical|horizontal">
 
-    <TextView
-        android:gravity="center"
-        android:layout_weight="0.3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Choose Appropriate Time"
-        android:id="@+id/tvTime"
-        android:layout_gravity="center_horizontal" />
+    <LinearLayout
+        android:background="#545454"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dip"
+        android:weightSum="1">
 
-    <TimePicker
-        android:layout_weight="0.4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/timer"
-        android:layout_gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:text="Choose Appropriate Time"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
 
-    <Button
-        android:layout_gravity="center"
-        android:layout_weight="0.2"
-        android:layout_width="175dip"
-        android:layout_height="25dip"
-        android:id="@+id/confirmMail"
-        android:text="Confirm Mail"
-        />
+        <TimePicker
+            android:numbersBackgroundColor="#FFFFFF"
+            android:amPmTextColor="#FFFFFF"
+            android:numbersTextColor="#FFFFFF"
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.4" />
+
+        <Button
+            android:id="@+id/confirmMail"
+            android:layout_width="175dip"
+            android:layout_height="15dip"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:background="#FF33B5E5"
+            android:text="Confirm Mail"
+            android:textColor="#ffffffff" />
 
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

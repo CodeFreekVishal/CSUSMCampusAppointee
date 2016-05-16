@@ -50,7 +50,7 @@ public class TimePick extends Activity {
                 i.putExtra(Intent.EXTRA_EMAIL, new String[]{"astrovishy@gmail.com"});
                 i.putExtra(Intent.EXTRA_SUBJECT, subject);
                 i.putExtra(Intent.EXTRA_TEXT, "Respected Professor, \n \n \t San Marcos student "+name+ " would like to book an appointment with you on "+
-                    month+"/"+day+"/"+"/"+year+" at "+currenthour+":"+currentmin+
+                    month+"/"+day+"/"+year+" at "+currenthour+":"+currentmin+
                         "\n \n Thanks for your time."
                 );
 

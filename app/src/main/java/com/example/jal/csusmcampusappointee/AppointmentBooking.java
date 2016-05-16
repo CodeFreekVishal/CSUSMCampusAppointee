@@ -21,7 +21,7 @@ public class AppointmentBooking extends Activity {
         prof1 = (Button) findViewById(R.id.btnProf1);
         prof2 = (Button) findViewById(R.id.btnProf2);
         prof3 = (Button) findViewById(R.id.btnProf3);
-        prof4 = (Button) findViewById(R.id.btnProf4);
+
 
         prof1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,13 +47,7 @@ public class AppointmentBooking extends Activity {
             }
         });
 
-        prof4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), DatePickerClass.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 }
