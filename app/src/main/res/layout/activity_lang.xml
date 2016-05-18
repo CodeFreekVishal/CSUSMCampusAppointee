@@ -1,34 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.example.jal.csusmcampusappointee.Lang">
+    android:layout_width="match_parent"
+    android:scrollbars="vertical|horizontal"
+    android:fillViewport="true"
+    >
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
+        android:gravity="center"
+        android:background="#545454"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dip"
+        android:paddingBottom="20dip"
+        android:weightSum="0.99"
+        >
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <LinearLayout
+            android:layout_weight="0.33"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="120dip"
+            android:orientation="horizontal"
+            android:paddingBottom="10dip"
+            android:paddingLeft="10dip"
+            android:weightSum="0.9">
 
-    </android.support.design.widget.AppBarLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:orientation="vertical">
 
-    <include layout="@layout/content_lang" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="0.1"
+                    android:id="@+id/tvLingProf1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brianne Kobeck"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-</android.support.design.widget.CoordinatorLayout>
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="0.1"
+                    android:id="@+id/tvLingProf1Details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dept of Linguistics"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <RatingBar
+                    android:layout_weight="0.1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:background="#FF33B5E5"
+                    android:textColor="#ffffffff"
+                    android:id="@+id/btnLing"
+                    android:layout_width="160dip"
+                    android:layout_height="wrap_content"
+                    android:text="Book Appointment" />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:src="@drawable/kobeck" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

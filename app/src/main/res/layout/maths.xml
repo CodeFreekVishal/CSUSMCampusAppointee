@@ -9,7 +9,6 @@
     >
 
     <LinearLayout
-        android:gravity="center"
         android:background="#545454"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,19 +38,19 @@
                 <TextView
                     android:textColor="#FFFFFF"
                     android:layout_weight="0.1"
-                    android:id="@+id/tvStemProf1"
+                    android:id="@+id/tvMathProf1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Brian Greene"
+                    android:text="Srinivasan Ramanujan"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
                     android:textColor="#FFFFFF"
                     android:layout_weight="0.1"
-                    android:id="@+id/tvStemProf1Details"
+                    android:id="@+id/tvMathProf1Details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dept of STEM"
+                    android:text="Dept of Mathematics"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <RatingBar
@@ -62,7 +61,7 @@
                 <Button
                     android:background="#FF33B5E5"
                     android:textColor="#ffffffff"
-                    android:id="@+id/btnStem"
+                    android:id="@+id/btnRam"
                     android:layout_width="160dip"
                     android:layout_height="wrap_content"
                     android:text="Book Appointment" />
@@ -74,7 +73,62 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:src="@drawable/greene" />
+                android:src="@drawable/ram" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="0.33"
+            android:layout_width="match_parent"
+            android:layout_height="120dip"
+            android:orientation="horizontal"
+            android:paddingBottom="10dip"
+            android:paddingLeft="10dip"
+            android:weightSum="0.9">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/tvProfName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="John Nash"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/tvDetails2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dept of Mathematics"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <RatingBar
+                    android:layout_weight="0.1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:background="#FF33B5E5"
+                    android:textColor="#ffffffff"
+                    android:id="@+id/btnNash"
+                    android:layout_width="160dip"
+                    android:layout_height="wrap_content"
+                    android:text="Book Appointment" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:src="@drawable/nash" />
 
         </LinearLayout>
 

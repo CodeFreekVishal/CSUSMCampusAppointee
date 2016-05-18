@@ -41,7 +41,7 @@
                 android:id="@+id/tvProfName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Professor 1"
+                android:text="Vishal Arora"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -50,7 +50,7 @@
                 android:id="@+id/tvDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dept of Xyz"
+                android:text="Dept of Literature"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <RatingBar
@@ -98,7 +98,7 @@
                 android:id="@+id/tvProfName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Professor 2"
+                android:text="Avadhya"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -106,7 +106,7 @@
                 android:id="@+id/tvDetails2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dept of Xyz"
+                android:text="Dept of Literature"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <RatingBar
@@ -154,7 +154,7 @@
                 android:id="@+id/tvProfName3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Professor 3"
+                android:text="Vishal Limbachiya"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -162,7 +162,7 @@
                 android:id="@+id/tvDetails3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dept of Xyz"
+                android:text="Dept of Literature"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <RatingBar

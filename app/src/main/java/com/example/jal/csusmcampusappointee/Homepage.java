@@ -48,15 +48,15 @@ public class Homepage extends Activity {
                 }
 
                 if (position == 1) {
-                    Intent intent = new Intent(Homepage.this, AppointmentBooking.class);
+                    Intent intent = new Intent(Homepage.this, Math.class);
                     startActivity(intent);
                 }
                 if (position == 2) {
-                    Intent intent = new Intent(Homepage.this, AppointmentBooking.class);
+                    Intent intent = new Intent(Homepage.this, Lang.class);
                     startActivity(intent);
                 }
                 if (position == 3) {
-                    Intent intent = new Intent(Homepage.this, AppointmentBooking.class);
+                    Intent intent = new Intent(Homepage.this, Stem.class);
                     startActivity(intent);
                 }
 
