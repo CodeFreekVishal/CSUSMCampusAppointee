@@ -14,7 +14,7 @@
     android:layout_centerHorizontal="true"
     android:paddingTop="10dip"
     android:orientation="vertical"
-    android:weightSum="1.1">
+    android:weightSum="1.5">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -86,12 +86,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="0.7"
         android:gravity="center"
         android:orientation="vertical"
         android:weightSum="0.6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="433dp">
 
 
 
@@ -132,7 +131,7 @@
             android:textColor="#FFFFFF"
             android:id="@+id/btnProceed"
             android:layout_width="225dp"
-            android:layout_height="50dip"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Proceed Ahead >>> "
             android:textScaleX="1.2" />
