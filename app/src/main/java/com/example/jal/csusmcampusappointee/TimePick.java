@@ -43,7 +43,7 @@ public class TimePick extends Activity {
                 int currenthour = timePick.getCurrentHour();
                 int currentmin = timePick.getCurrentMinute();
 
-                Toast.makeText(TimePick.this, currenthour+""+currentmin, Toast.LENGTH_SHORT).show();
+
 
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("message/rfc822");
