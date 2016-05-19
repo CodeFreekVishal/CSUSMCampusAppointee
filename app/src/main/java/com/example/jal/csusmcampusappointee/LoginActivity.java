@@ -58,8 +58,8 @@ public class LoginActivity extends Activity {
                             Intent intent = new Intent(getApplicationContext(), Homepage.class);
                             startActivity(intent);
                         }
-                            dba.open();
-                            if (dba.login(emailText,pwdText).equalsIgnoreCase("yes")) {
+                            sda.open();
+                            if (sda.login(emailText,pwdText) == true) {
                                 //dba.getAllRecords();
                                 Toast.makeText(getApplicationContext(), "Yay !!", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(getApplicationContext(), Homepage.class);
