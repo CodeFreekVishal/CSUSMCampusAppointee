@@ -108,6 +108,26 @@
             android:orientation="vertical"
             android:paddingTop="10dip">
 
+            <TextView
+                style="?android:textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="15dip"
+                android:text="Are you here for the first time ? \n We are pleased to have you :) \n Kindly signup first"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/signUpButton"
+                android:layout_width="306dp"
+                android:layout_height="50dip"
+                android:layout_gravity="center"
+                android:autoLink="web"
+                android:background="#FF33B5E5"
+                android:text="Sign up"
+                android:textColor="#FFFFFF" />
+
         </LinearLayout>
 
 

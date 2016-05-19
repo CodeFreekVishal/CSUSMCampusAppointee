@@ -27,7 +27,7 @@ public class LoginActivity extends Activity {
         Button sendbutton = (Button) findViewById(R.id.email_sign_in_button);
         signup = (Button) findViewById(R.id.signUpButton);
 
-       // final SignupDatabaseAdapter sda = new SignupDatabaseAdapter(this);
+        final SignupDatabaseAdapter sda = new SignupDatabaseAdapter(this);
         final DbAdapter dba = new DbAdapter(this);
 
         sendbutton.setOnClickListener(
@@ -58,7 +58,7 @@ public class LoginActivity extends Activity {
                             Intent intent = new Intent(getApplicationContext(), Homepage.class);
                             startActivity(intent);
                         }
-                         /*   dba.open();
+                            dba.open();
                             if (dba.login(emailText,pwdText).equalsIgnoreCase("yes")) {
                                 //dba.getAllRecords();
                                 Toast.makeText(getApplicationContext(), "Yay !!", Toast.LENGTH_LONG).show();
@@ -66,11 +66,11 @@ public class LoginActivity extends Activity {
                                 startActivity(intent);
                             }
                             else{
-                                Intent intent = new Intent(getApplicationContext(), Homepage.class);
-                                startActivity(intent);
+                              //  Intent intent = new Intent(getApplicationContext(), Homepage.class);
+                              //  startActivity(intent);
                                 Toast.makeText(getApplicationContext(), "Record not found !", Toast.LENGTH_LONG).show();
-                                dba.getAllRecords();
-                            } */
+                               // dba.getAllRecords();
+                            }
                         }
 
                 });
