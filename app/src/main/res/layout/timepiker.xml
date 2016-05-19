@@ -42,7 +42,7 @@
             android:layout_gravity="center"
             android:layout_weight="0.2"
             android:background="#FF33B5E5"
-            android:text="Confirm Mail"
+            android:text="Confirm Mail and Logout"
             android:textColor="#ffffffff" />
 
 

@@ -43,7 +43,14 @@ public class TimePick extends Activity {
                 int currenthour = timePick.getCurrentHour();
                 int currentmin = timePick.getCurrentMinute();
 
+                Intent inte = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(inte);
 
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("message/rfc822");
